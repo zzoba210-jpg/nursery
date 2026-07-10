@@ -39,7 +39,7 @@
             overflow-x: hidden;
         }
 
-        /* الهيدر الزجاجي المطور والموسع بالكامل للموبايل */
+        /* الهيدر الزجاجي المطور */
         header {
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(20px);
@@ -54,7 +54,7 @@
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 16px 20px; /* مساحة داخلية أوسع ومريحة للعين */
+            padding: 16px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -65,7 +65,7 @@
             gap: 12px;
         }
         .logo-img {
-            height: 65px; /* تكبير اللوجو ليظهر بوضوح وفخامة */
+            height: 65px;
             width: auto;
             object-fit: contain;
         }
@@ -80,12 +80,12 @@
         .contact-btn {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
             color: var(--white);
-            padding: 10px 24px; /* مساحة ضغط مثالية مريحة وصديقة للمس */
+            padding: 10px 24px;
             text-decoration: none;
             border-radius: 30px;
             font-weight: 700;
             font-size: 15px;
-            white-space: nowrap; /* منع الكلمة من النزول لسطرين نهائياً */
+            white-space: nowrap;
             box-shadow: 0 4px 15px rgba(27, 67, 50, 0.15);
             transition: var(--transition);
         }
@@ -95,7 +95,7 @@
 
         /* البانر الرئيسي (Hero) */
         .hero {
-            margin-top: 97px; /* زيادة الهامش العلوي ليتناسب مع الهيدر الجديد */
+            margin-top: 97px;
             background: linear-gradient(rgba(19, 42, 31, 0.75), rgba(27, 67, 50, 0.6)), 
                         url('https://images.pexels.com/photos/1005058/pexels-photo-1005058.jpeg?auto=compress&cs=tinysrgb&w=1200') no-repeat center center/cover;
             height: 60vh;
@@ -282,7 +282,7 @@
         .review-text { font-size: 14px; font-style: italic; margin-bottom: 12px; line-height: 1.6; color: var(--text-main); }
         .reviewer-name { font-weight: 700; color: var(--primary); font-size: 13px; }
 
-        /* قسم التواصل والموقع الفعلي */
+        /* قسم التواصل النظيف بدون خريطة */
         .contact-section {
             background: rgba(255, 255, 255, 0.4);
             backdrop-filter: blur(20px);
@@ -290,20 +290,16 @@
             border-top: 1px solid var(--glass-border);
             padding: 60px 0;
         }
-        .contact-grid {
-            max-width: 1200px;
+        .contact-container {
+            max-width: 600px;
             margin: 0 auto;
             padding: 0 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-            gap: 40px;
-            align-items: center;
         }
-        .contact-info h3 {
+        .contact-container h3 {
             font-size: 24px;
             font-weight: 800;
             color: var(--primary);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             text-align: center;
         }
         
@@ -335,12 +331,13 @@
         
         .btn-group { 
             display: flex; 
+            flex-direction: column;
             gap: 12px; 
             margin-top: 25px; 
         }
-        .btn-call, .btn-whatsapp {
-            flex: 1;
-            padding: 14px;
+        .btn-call, .btn-whatsapp, .btn-maps {
+            width: 100%;
+            padding: 15px;
             text-align: center;
             border-radius: 16px;
             text-decoration: none;
@@ -351,19 +348,15 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 6px;
-            font-size: 15px;
+            gap: 8px;
+            font-size: 16px;
         }
         .btn-call { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%); }
+        .btn-maps { background: linear-gradient(135deg, #34a853 0%, #247239 100%); }
         .btn-whatsapp { background: linear-gradient(135deg, #25D366 0%, #1cbd55 100%); }
-        .btn-call:active, .btn-whatsapp:active { transform: scale(0.96); }
-
-        .map-container iframe {
-            width: 100%;
-            height: 320px;
-            border: 0;
-            border-radius: 24px;
-            box-shadow: var(--card-shadow);
+        
+        .btn-call:active, .btn-whatsapp:active, .btn-maps:active { 
+            transform: scale(0.97); 
         }
 
         /* الفوتر */
@@ -376,15 +369,11 @@
             font-weight: 500;
         }
 
-        /* شاشات الموبايل والتابلت المتطورة */
+        /* شاشات الموبايل والتابلت */
         @media (max-width: 768px) {
             .hero-content h1 { font-size: 28px; }
             .hero-content p { font-size: 15px; }
-            .contact-grid { grid-template-columns: 1fr; gap: 30px; }
-            .btn-group { flex-direction: column; gap: 10px; }
             .tip-item { flex-direction: column; text-align: center; }
-            
-            /* الحفاظ على أبعاد الهيدر متناسقة ومريحة في الموبايل */
             .logo-img { height: 52px; }
             .logo-text { font-size: 17px; }
             .contact-btn { padding: 8px 16px; font-size: 13px; }
@@ -395,7 +384,7 @@
 </head>
 <body>
 
-    <!-- الهيدر الزجاجي المطور والمريح للعين -->
+    <!-- الهيدر الزجاجي المطور -->
     <header>
         <div class="nav-container">
             <div class="logo-container">
@@ -475,7 +464,7 @@
                 </div>
                 <div class="plant-info">
                     <h3>أشجار وظل خارجي</h3>
-                    <p>أشجار زينة وشجيرات ظل قوية وممتازة للمساحات الخارجية والحدائق، منتقاة لتتحمل الأجواء والظروف المختلفة.</p>
+                    <p>أشجار زينة وشجيرات ظل قوية وممتازة للمساحات الخارجية والحدائق, منتقاة لتتحمل الأجواء والظروف المختلفة.</p>
                 </div>
             </div>
         </div>
@@ -519,36 +508,29 @@
         </div>
     </section>
 
-    <!-- قسم التواصل والموقع الفعلي مع اللينك المحدث بدقة -->
+    <!-- قسم التواصل النظيف بدون خريطة مع اللوكيشن الجديد المحدث -->
     <section class="contact-section" id="contact">
-        <div class="contact-grid">
-            <div class="contact-info">
-                <h3>تشرفنا زيارتكم في أي وقت</h3>
-                
-                <div class="info-card">
-                    <div class="info-label">📍 الموقع الحالي:</div>
-                    <div class="info-value">الرياض، طريق الملك سلمان بن عبدالعزيز</div>
-                </div>
-                <div class="info-card">
-                    <div class="info-label">⏰ مواعيد العمل:</div>
-                    <div class="info-value">يومياً من 6:00 صباحاً حتى 11:00 مساءً</div>
-                </div>
-                <div class="info-card">
-                    <div class="info-label">📞 رقم التواصل:</div>
-                    <div class="info-value">0568583085</div>
-                </div>
-                
-                <div class="btn-group">
-                    <a href="tel:+966568583085" class="btn-call">📞 اتصال هاتفي مباشر</a>
-                    <!-- رابط الموقع الإلكتروني الجديد المحدث بالكامل بناءً على طلبك -->
-                    <a href="https://maps.app.goo.gl/p2SR2vsq1VXWYbzR6" target="_blank" class="btn-call" style="background: linear-gradient(135deg, #34a853 0%, #247239 100%)">🗺️ فتح عبر خرائط جوجل</a>
-                    <a href="https://wa.me/966568583085" target="_blank" class="btn-whatsapp">💬 مراسلة عبر الواتساب</a>
-                </div>
+        <div class="contact-container">
+            <h3>تشرفنا زيارتكم في أي وقت</h3>
+            
+            <div class="info-card">
+                <div class="info-label">📍 الموقع الحالي:</div>
+                <div class="info-value">الرياض، طريق الملك سلمان بن عبدالعزيز</div>
+            </div>
+            <div class="info-card">
+                <div class="info-label">⏰ مواعيد العمل:</div>
+                <div class="info-value">يومياً من 6:00 صباحاً حتى 11:00 مساءً</div>
+            </div>
+            <div class="info-card">
+                <div class="info-label">📞 رقم التواصل:</div>
+                <div class="info-value">0568583085</div>
             </div>
             
-            <!-- خريطة جوجل التفاعلية المحدثة المتوافقة مع اللوكيشن الجديد -->
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.258169222533!2d46.6027582!3d24.8550212!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2ee30dbe13f595%3A0xe5e1b601662d55ee!2zMjTCsDUxJzE4LjEiTiA0NsKwMzYnMTAuMCJF!5e0!3m2!1sar!2ssa!4v1719700000000!5m2!1sar!2ssa" allowfullscreen="" loading="lazy"></iframe>
+            <div class="btn-group">
+                <a href="tel:+966568583085" class="btn-call">📞 اتصال هاتفي مباشر</a>
+                <!-- الرابط الجديد المحدث والمطابق لطلبك الأخير بالملّي -->
+                <a href="https://maps.app.goo.gl/TPP1q53vugCXECiSA?g_st=aw" target="_blank" class="btn-maps">🗺️ فتح عبر خرائط جوجل</a>
+                <a href="https://wa.me/966568583085" target="_blank" class="btn-whatsapp">💬 مراسلة عبر الواتساب</a>
             </div>
         </div>
     </section>
