@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مشتل غدير | عالم من الجمال الطبيعي وتنسيق الحدائق</title>
+    <title>مشتل المصطفى | عالم من الجمال الطبيعي وتنسيق الحدائق</title>
     <!-- خط Cairo المميز -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,15 +11,17 @@
     
     <style>
         :root {
-            --primary: #1b4332; /* أخضر ملكي فخم مناسب للوجو */
+            --primary: #1b4332;
             --primary-light: #2d6a4f;
-            --accent: #52b788; /* أخضر مبهج للتفاصيل */
+            --accent: #40916c;
             --text-main: #2d3748;
-            --text-muted: #718096;
-            --bg-gradient: linear-gradient(135deg, #f4f9f4 0%, #e8f5e9 100%);
+            --text-muted: #5a6a85;
+            --bg-gradient: linear-gradient(135deg, #f0f7f4 0%, #e8f5e9 100%);
             --white: #ffffff;
-            --card-shadow: 0 10px 30px rgba(27, 67, 50, 0.06);
-            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --glass-bg: rgba(255, 255, 255, 0.45);
+            --glass-border: rgba(255, 255, 255, 0.6);
+            --card-shadow: 0 8px 32px 0 rgba(27, 67, 50, 0.05);
+            --transition: all 0.3s ease-in-out;
         }
 
         * {
@@ -28,6 +30,7 @@
             padding: 0;
             font-family: 'Cairo', sans-serif;
             scroll-behavior: smooth;
+            -webkit-tap-highlight-color: transparent;
         }
 
         body {
@@ -36,22 +39,22 @@
             overflow-x: hidden;
         }
 
-        /* الهيدر الاحترافي */
+        /* الهيدر الزجاجي الاحترافي */
         header {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
         }
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 10px 20px;
+            padding: 12px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -59,15 +62,15 @@
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
         .logo-img {
-            height: 55px; /* حجم متناسق للوجو في الهيدر */
+            height: 50px;
             width: auto;
             object-fit: contain;
         }
         .logo-text {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 900;
             color: var(--primary);
         }
@@ -76,24 +79,24 @@
         .contact-btn {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
             color: var(--white);
-            padding: 10px 24px;
+            padding: 10px 22px;
             text-decoration: none;
             border-radius: 30px;
             font-weight: 700;
-            box-shadow: 0 4px 15px rgba(27, 67, 50, 0.2);
+            font-size: 14px;
+            box-shadow: 0 4px 15px rgba(27, 67, 50, 0.15);
             transition: var(--transition);
         }
-        .contact-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(27, 67, 50, 0.3);
+        .contact-btn:active {
+            transform: scale(0.95);
         }
 
         /* البانر الرئيسي (Hero) */
         .hero {
-            margin-top: 75px;
-            background: linear-gradient(rgba(19, 42, 31, 0.7), rgba(27, 67, 50, 0.55)), 
+            margin-top: 74px;
+            background: linear-gradient(rgba(19, 42, 31, 0.75), rgba(27, 67, 50, 0.6)), 
                         url('https://images.pexels.com/photos/1005058/pexels-photo-1005058.jpeg?auto=compress&cs=tinysrgb&w=1200') no-repeat center center/cover;
-            height: 65vh;
+            height: 60vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -102,168 +105,148 @@
             padding: 0 20px;
         }
         .hero-content h1 {
-            font-size: 44px;
+            font-size: 36px;
             font-weight: 900;
-            margin-bottom: 15px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            margin-bottom: 12px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
         .hero-content p {
-            font-size: 20px;
-            margin-bottom: 30px;
-            font-weight: 300;
+            font-size: 18px;
+            margin-bottom: 25px;
+            font-weight: 400;
             opacity: 0.95;
         }
 
         /* التنسيق العام للأقسام */
         .section {
             max-width: 1200px;
-            margin: 80px auto;
+            margin: 60px auto;
             padding: 0 20px;
         }
         .section-title {
             text-align: center;
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 800;
             color: var(--primary);
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
         .section-title span {
             display: block;
-            font-size: 14px;
+            font-size: 13px;
             color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 5px;
+            letter-spacing: 1px;
+            margin-bottom: 40px;
             font-weight: 700;
         }
 
-        /* قسم الخدمات المستخلصة والمطورة */
+        /* قسم الخدمات الزجاجي */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 25px;
         }
         .service-card {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            padding: 35px 25px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            padding: 30px 20px;
             border-radius: 24px;
             box-shadow: var(--card-shadow);
             transition: var(--transition);
-            position: relative;
-            overflow: hidden;
         }
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 5px;
-            height: 100%;
-            background: linear-gradient(to bottom, var(--primary), var(--accent));
-            opacity: 0;
-            transition: var(--transition);
-        }
-        .service-card:hover {
-            transform: translateY(-8px);
-            background: var(--white);
-            box-shadow: 0 15px 35px rgba(27, 67, 50, 0.12);
-        }
-        .service-card:hover::before {
-            opacity: 1;
+        .service-card:active {
+            transform: translateY(-4px);
+            background: rgba(255, 255, 255, 0.7);
         }
         .service-icon {
-            font-size: 42px;
-            margin-bottom: 20px;
-            background: #e8f5e9;
-            width: 70px;
-            height: 70px;
+            font-size: 36px;
+            margin-bottom: 15px;
+            background: rgba(232, 245, 233, 0.6);
+            width: 60px;
+            height: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 18px;
+            border-radius: 16px;
             color: var(--primary);
         }
         .service-card h4 {
-            font-size: 22px;
+            font-size: 20px;
             color: var(--primary);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             font-weight: 700;
         }
         .service-card p {
             color: var(--text-muted);
-            font-size: 15px;
+            font-size: 14px;
             line-height: 1.7;
         }
 
         /* شبكة معرض الصور */
         .plants-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 35px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
         }
         .plant-card {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border-radius: 24px;
             overflow: hidden;
             box-shadow: var(--card-shadow);
-            border: 1px solid rgba(255, 255, 255, 0.6);
+            border: 1px solid var(--glass-border);
             transition: var(--transition);
-        }
-        .plant-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(27, 67, 50, 0.15);
-            background: var(--white);
         }
         .img-container {
             width: 100%;
-            height: 250px;
+            height: 220px;
             overflow: hidden;
         }
         .plant-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: var(--transition);
         }
-        .plant-card:hover .plant-img { transform: scale(1.1); }
-        .plant-info { padding: 25px; }
+        .plant-info { padding: 20px; }
         .plant-info h3 {
-            font-size: 22px;
+            font-size: 19px;
             font-weight: 700;
             color: var(--primary);
-            margin-bottom: 12px;
+            margin-bottom: 8px;
         }
         .plant-info p {
             color: var(--text-muted);
-            font-size: 15px;
-            line-height: 1.7;
+            font-size: 14px;
+            line-height: 1.6;
         }
 
-        /* قسم الدليل والنصائح */
+        /* قسم الدليل والنصائح الجمالية */
         .tips-container {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 15px;
         }
         .tip-item {
-            background: var(--white);
-            padding: 25px;
-            border-radius: 16px;
-            box-shadow: var(--card-shadow);
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            padding: 20px;
+            border-radius: 20px;
             display: flex;
-            gap: 20px;
+            gap: 15px;
             align-items: center;
+            box-shadow: var(--card-shadow);
         }
         .tip-number {
-            background: var(--bg-gradient);
+            background: var(--white);
             color: var(--primary);
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 900;
-            width: 50px;
-            height: 50px;
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -272,85 +255,111 @@
             border: 2px solid var(--accent);
         }
         .tip-content h5 {
-            font-size: 18px;
+            font-size: 16px;
             color: var(--primary);
-            margin-bottom: 5px;
+            margin-bottom: 4px;
         }
-        .tip-content p { color: var(--text-muted); font-size: 14px; }
+        .tip-content p { color: var(--text-muted); font-size: 13px; }
 
         /* قسم التقييمات */
         .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            gap: 20px;
         }
         .review-card {
-            background: rgba(255, 255, 255, 0.6);
-            padding: 30px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            padding: 25px;
             border-radius: 20px;
             box-shadow: var(--card-shadow);
-            border: 1px solid rgba(255,255,255,0.5);
         }
-        .stars { color: #ffb703; font-size: 18px; margin-bottom: 15px; }
-        .review-text { font-size: 15px; font-style: italic; margin-bottom: 15px; line-height: 1.6; }
-        .reviewer-name { font-weight: 700; color: var(--primary); font-size: 14px; }
+        .stars { color: #ffb703; font-size: 16px; margin-bottom: 10px; }
+        .review-text { font-size: 14px; font-style: italic; margin-bottom: 12px; line-height: 1.6; color: var(--text-main); }
+        .reviewer-name { font-weight: 700; color: var(--primary); font-size: 13px; }
 
-        /* قسم التواصل والموقع الفعلي */
+        /* قسم التواصل والموقع (منظم ومصلح بالكامل للموبايل) */
         .contact-section {
-            background: rgba(255, 255, 255, 0.5);
-            backdrop-filter: blur(10px);
-            border-top: 1px solid rgba(255, 255, 255, 0.5);
-            padding: 80px 0;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-top: 1px solid var(--glass-border);
+            padding: 60px 0;
         }
         .contact-grid {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(352px, 1fr));
-            gap: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 40px;
             align-items: center;
         }
         .contact-info h3 {
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 800;
             color: var(--primary);
-            margin-bottom: 25px;
+            margin-bottom: 20px;
+            text-align: center;
         }
+        
+        /* إصلاح مشكلة تداخل النصوص العريضة والـ width الثابت */
         .info-card {
             background: var(--white);
-            padding: 20px;
-            border-radius: 16px;
+            padding: 16px 20px;
+            border-radius: 20px;
             margin-bottom: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.01);
+            box-shadow: var(--card-shadow);
             border-right: 4px solid var(--accent);
-            font-size: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
         }
-        .info-card strong { color: var(--primary); display: inline-block; width: 110px; }
+        .info-label {
+            font-size: 15px;
+            font-weight: 800;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .info-value {
+            font-size: 15px;
+            color: var(--text-main);
+            font-weight: 500;
+            padding-right: 22px;
+        }
         
-        .btn-group { display: flex; gap: 15px; margin-top: 30px; }
+        .btn-group { 
+            display: flex; 
+            gap: 12px; 
+            margin-top: 25px; 
+        }
         .btn-call, .btn-whatsapp {
             flex: 1;
-            padding: 15px;
+            padding: 14px;
             text-align: center;
-            border-radius: 12px;
+            border-radius: 16px;
             text-decoration: none;
             font-weight: 700;
             color: var(--white);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             transition: var(--transition);
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
+            font-size: 15px;
         }
         .btn-call { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%); }
         .btn-whatsapp { background: linear-gradient(135deg, #25D366 0%, #1cbd55 100%); }
-        .btn-call:hover, .btn-whatsapp:hover { transform: translateY(-3px); opacity: 0.95; }
+        .btn-call:active, .btn-whatsapp:active { transform: scale(0.96); }
 
         .map-container iframe {
             width: 100%;
-            height: 350px;
+            height: 320px;
             border: 0;
             border-radius: 24px;
             box-shadow: var(--card-shadow);
@@ -359,75 +368,72 @@
         /* الفوتر */
         footer {
             background: var(--primary);
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.75);
             text-align: center;
-            padding: 25px;
-            font-size: 15px;
+            padding: 20px;
+            font-size: 14px;
             font-weight: 500;
         }
 
+        /* شاشات الموبايل والتابلت */
         @media (max-width: 768px) {
-            .hero-content h1 { font-size: 32px; }
-            .hero-content p { font-size: 16px; }
-            .contact-grid { grid-template-columns: 1fr; }
-            .btn-group { flex-direction: column; }
+            .hero-content h1 { font-size: 28px; }
+            .hero-content p { font-size: 15px; }
+            .contact-grid { grid-template-columns: 1fr; gap: 30px; }
+            .btn-group { flex-direction: column; gap: 10px; }
             .tip-item { flex-direction: column; text-align: center; }
             .logo-text { font-size: 18px; }
-            .logo-img { height: 45px; }
+            .logo-img { height: 42px; }
+            .section { margin: 40px auto; }
         }
     </style>
 </head>
 <body>
 
-    <!-- الهيدر الاحترافي مدمج به اللوجو الجديد -->
+    <!-- الهيدر الزجاجي الاحترافي -->
     <header>
         <div class="nav-container">
             <div class="logo-container">
-                <img src="logo.png" alt="شعار مشتل غدير" class="logo-img">
-                <div class="logo-text">مشتل <span>غدير</span></div>
+                <img src="logo.png" alt="شعار مشتل المصطفى" class="logo-img">
+                <div class="logo-text">مشتل <span>المصطفى</span></div>
             </div>
             <a href="#contact" class="contact-btn">تواصل معنا</a>
         </div>
     </header>
 
-    <!-- البانر الرئيسي الفخم -->
+    <!-- البانر الرئيسي (Hero) -->
     <section class="hero">
         <div class="hero-content">
-            <h1>مشتل غدير للزهور وتنسيق الحدائق</h1>
+            <h1>مشتل المصطفى للزهور وتنسيق الحدائق</h1>
             <p>نحول حوشك أو استراحتك إلى جنة خضراء بأفضل الأسعار وأجود الأنواع! 🌴✨</p>
-            <a href="#contact" class="contact-btn" style="padding: 14px 35px; font-size: 18px;">اطلب أو استشرنا الآن</a>
+            <a href="#contact" class="contact-btn" style="padding: 12px 30px; font-size: 16px; border-radius: 30px;">اطلب أو استشرنا الآن</a>
         </div>
     </section>
 
-    <!-- قسم الخدمات المستخلص والمعدل بناءً على طلبك -->
+    <!-- قسم الخدمات المستخلص والمعدل بتأثير زجاجي -->
     <section class="section">
         <h2 class="section-title"><span>احترافية وخبرة</span>خدماتنا المتميزة</h2>
         <div class="services-grid">
-            <!-- خدمة 1 -->
             <div class="service-card">
                 <div class="service-icon">🌳</div>
                 <h4>تنسيق الحدائق</h4>
                 <p>تصميم وتنسيق حدائق الفلل والاستراحات بأحدث الموديلات العصرية التي تناسب ذوقك وتمنحك الراحة الكاملة.</p>
             </div>
-            <!-- خدمة 2 -->
             <div class="service-card">
                 <div class="service-icon">💧</div>
                 <h4>شبكات وأنظمة الري</h4>
                 <p>تركيب وتمديد شبكات الري العادية والحديثة، تركيب التايمر وأنظمة الري الأوتوماتيكي الذكية، بالإضافة لأنظمة الرذاذ لتلطيف الأجواء.</p>
             </div>
-            <!-- خدمة 3 -->
             <div class="service-card">
                 <div class="service-icon">🌿</div>
                 <h4>زراعة الثيل</h4>
                 <p>توريد وتركيب الثيل الطبيعي والصناعي بجميع أنواعه وفئاته، وبأعلى جودة تضمن استدامته ونضارته.</p>
             </div>
-            <!-- خدمة 4 -->
             <div class="service-card">
                 <div class="service-icon">🧱</div>
                 <h4>الأحواض الزراعية</h4>
                 <p>تصميم وبناء أحواض الزهور والأشجار بطرق فنية ومبتكرة تتماشى مع الديكور العام للمكان وتبرز جمال المزروعات.</p>
             </div>
-            <!-- خدمة 5 -->
             <div class="service-card">
                 <div class="service-icon">🌴</div>
                 <h4>توريد الشتلات والنخيل</h4>
@@ -493,7 +499,7 @@
 
     <!-- قسم التقييمات وآراء العملاء -->
     <section class="section">
-        <h2 class="section-title"><span>قالوا عن مشتل غدير</span>ثقة عملائنا هي رأس مالنا</h2>
+        <h2 class="section-title"><span>قالوا عن مشتل المصطفى</span>ثقة عملائنا هي رأس مالنا</h2>
         <div class="testimonials-grid">
             <div class="review-card">
                 <div class="stars">⭐⭐⭐⭐⭐</div>
@@ -508,38 +514,43 @@
         </div>
     </section>
 
-    <!-- قسم البيانات الفعلية والتواصل مدمج به الخريطة بدقة -->
+    <!-- قسم التواصل والموقع (مُعدل ومصلح بالكامل) -->
     <section class="contact-section" id="contact">
         <div class="contact-grid">
             <div class="contact-info">
                 <h3>تشرفنا زيارتكم في أي وقت</h3>
                 
+                <!-- كروت العرض الجديدة المصلحة دون أي تداخل نصوص -->
                 <div class="info-card">
-                    <strong>📍 الموقع الحالي:</strong> المملكة العربية السعودية، الدمام
+                    <div class="info-label">📍 الموقع الحالي:</div>
+                    <div class="info-value">الرياض، طريق الملك سلمان بن عبدالعزيز</div>
                 </div>
                 <div class="info-card">
-                    <strong>⏰ مواعيد العمل:</strong> يومياً من 6:00 صباحاً حتى 11:00 مساءً
+                    <div class="info-label">⏰ مواعيد العمل:</div>
+                    <div class="info-value">يومياً من 6:00 صباحاً حتى 11:00 مساءً</div>
                 </div>
                 <div class="info-card">
-                    <strong>📞 رقم التواصل:</strong> 0568583085
+                    <div class="info-label">📞 رقم التواصل:</div>
+                    <div class="info-value">0568583085</div>
                 </div>
                 
                 <div class="btn-group">
                     <a href="tel:+966568583085" class="btn-call">📞 اتصال هاتفي مباشر</a>
+                    <a href="https://maps.app.goo.gl/ZR6SN7sjDyd1GX1B9" target="_blank" class="btn-call" style="background: linear-gradient(135deg, #34a853 0%, #247239 100%)">🗺️ فتح عبر خرائط جوجل</a>
                     <a href="https://wa.me/966568583085" target="_blank" class="btn-whatsapp">💬 مراسلة عبر الواتساب</a>
                 </div>
             </div>
             
-            <!-- خريطة جوجل التفاعلية الفعليه للمشتل برابطها المباشر المدمج -->
+            <!-- خريطة جوجل التفاعلية الفعليه المحدثة لموقع طريق الملك سلمان بالرياض -->
             <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3574.6041132644265!2d50.125139!3d26.371667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e49e9cf2996d595%3A0xe5e1b601662d55ee!2zMjbCsDIyJzE4LjAiTiA1MMKwMDcnMzAuNSJF!5e0!3m2!1sar!2ssa!4v1719700000000!5m2!1sar!2ssa" allowfullscreen="" loading="lazy"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.258169222533!2d46.6027582!3d24.8550212!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2ee30dbe13f595%3A0xe5e1b601662d55ee!2zMjTCsDUxJzE4LjEiTiA0NsKwMzYnMTAuMCJF!5e0!3m2!1sar!2ssa!4v1719700000000!5m2!1sar!2ssa" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </section>
 
     <!-- الفوتر -->
     <footer>
-        <p>جميع الحقوق محفوظة © مشتل غدير 2026</p>
+        <p>جميع الحقوق محفوظة © مشتل المصطفى 2026</p>
     </footer>
 
 </body>
