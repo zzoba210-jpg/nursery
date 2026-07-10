@@ -39,9 +39,9 @@
             overflow-x: hidden;
         }
 
-        /* الهيدر الزجاجي الاحترافي */
+        /* الهيدر الزجاجي المطور والموسع بالكامل للموبايل */
         header {
-            background: rgba(255, 255, 255, 0.65);
+            background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--glass-border);
@@ -54,7 +54,7 @@
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 12px 20px;
+            padding: 16px 20px; /* مساحة داخلية أوسع ومريحة للعين */
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -62,28 +62,30 @@
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
         .logo-img {
-            height: 50px;
+            height: 65px; /* تكبير اللوجو ليظهر بوضوح وفخامة */
             width: auto;
             object-fit: contain;
         }
         .logo-text {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 900;
             color: var(--primary);
+            line-height: 1.2;
         }
         .logo-text span { color: var(--accent); }
         
         .contact-btn {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
             color: var(--white);
-            padding: 10px 22px;
+            padding: 10px 24px; /* مساحة ضغط مثالية مريحة وصديقة للمس */
             text-decoration: none;
             border-radius: 30px;
             font-weight: 700;
-            font-size: 14px;
+            font-size: 15px;
+            white-space: nowrap; /* منع الكلمة من النزول لسطرين نهائياً */
             box-shadow: 0 4px 15px rgba(27, 67, 50, 0.15);
             transition: var(--transition);
         }
@@ -93,7 +95,7 @@
 
         /* البانر الرئيسي (Hero) */
         .hero {
-            margin-top: 74px;
+            margin-top: 97px; /* زيادة الهامش العلوي ليتناسب مع الهيدر الجديد */
             background: linear-gradient(rgba(19, 42, 31, 0.75), rgba(27, 67, 50, 0.6)), 
                         url('https://images.pexels.com/photos/1005058/pexels-photo-1005058.jpeg?auto=compress&cs=tinysrgb&w=1200') no-repeat center center/cover;
             height: 60vh;
@@ -135,7 +137,7 @@
             font-size: 13px;
             color: var(--accent);
             letter-spacing: 1px;
-            margin-bottom: 40px;
+            margin-bottom: 10px;
             font-weight: 700;
         }
 
@@ -280,7 +282,7 @@
         .review-text { font-size: 14px; font-style: italic; margin-bottom: 12px; line-height: 1.6; color: var(--text-main); }
         .reviewer-name { font-weight: 700; color: var(--primary); font-size: 13px; }
 
-        /* قسم التواصل والموقع (منظم ومصلح بالكامل للموبايل) */
+        /* قسم التواصل والموقع الفعلي */
         .contact-section {
             background: rgba(255, 255, 255, 0.4);
             backdrop-filter: blur(20px);
@@ -305,7 +307,6 @@
             text-align: center;
         }
         
-        /* إصلاح مشكلة تداخل النصوص العريضة والـ width الثابت */
         .info-card {
             background: var(--white);
             padding: 16px 20px;
@@ -375,22 +376,26 @@
             font-weight: 500;
         }
 
-        /* شاشات الموبايل والتابلت */
+        /* شاشات الموبايل والتابلت المتطورة */
         @media (max-width: 768px) {
             .hero-content h1 { font-size: 28px; }
             .hero-content p { font-size: 15px; }
             .contact-grid { grid-template-columns: 1fr; gap: 30px; }
             .btn-group { flex-direction: column; gap: 10px; }
             .tip-item { flex-direction: column; text-align: center; }
-            .logo-text { font-size: 18px; }
-            .logo-img { height: 42px; }
+            
+            /* الحفاظ على أبعاد الهيدر متناسقة ومريحة في الموبايل */
+            .logo-img { height: 52px; }
+            .logo-text { font-size: 17px; }
+            .contact-btn { padding: 8px 16px; font-size: 13px; }
+            .hero { margin-top: 85px; }
             .section { margin: 40px auto; }
         }
     </style>
 </head>
 <body>
 
-    <!-- الهيدر الزجاجي الاحترافي -->
+    <!-- الهيدر الزجاجي المطور والمريح للعين -->
     <header>
         <div class="nav-container">
             <div class="logo-container">
@@ -410,7 +415,7 @@
         </div>
     </section>
 
-    <!-- قسم الخدمات المستخلص والمعدل بتأثير زجاجي -->
+    <!-- قسم الخدمات المتميزة -->
     <section class="section">
         <h2 class="section-title"><span>احترافية وخبرة</span>خدماتنا المتميزة</h2>
         <div class="services-grid">
@@ -514,13 +519,12 @@
         </div>
     </section>
 
-    <!-- قسم التواصل والموقع (مُعدل ومصلح بالكامل) -->
+    <!-- قسم التواصل والموقع الفعلي مع اللينك المحدث بدقة -->
     <section class="contact-section" id="contact">
         <div class="contact-grid">
             <div class="contact-info">
                 <h3>تشرفنا زيارتكم في أي وقت</h3>
                 
-                <!-- كروت العرض الجديدة المصلحة دون أي تداخل نصوص -->
                 <div class="info-card">
                     <div class="info-label">📍 الموقع الحالي:</div>
                     <div class="info-value">الرياض، طريق الملك سلمان بن عبدالعزيز</div>
@@ -536,12 +540,13 @@
                 
                 <div class="btn-group">
                     <a href="tel:+966568583085" class="btn-call">📞 اتصال هاتفي مباشر</a>
-                    <a href="https://maps.app.goo.gl/ZR6SN7sjDyd1GX1B9" target="_blank" class="btn-call" style="background: linear-gradient(135deg, #34a853 0%, #247239 100%)">🗺️ فتح عبر خرائط جوجل</a>
+                    <!-- رابط الموقع الإلكتروني الجديد المحدث بالكامل بناءً على طلبك -->
+                    <a href="https://maps.app.goo.gl/p2SR2vsq1VXWYbzR6" target="_blank" class="btn-call" style="background: linear-gradient(135deg, #34a853 0%, #247239 100%)">🗺️ فتح عبر خرائط جوجل</a>
                     <a href="https://wa.me/966568583085" target="_blank" class="btn-whatsapp">💬 مراسلة عبر الواتساب</a>
                 </div>
             </div>
             
-            <!-- خريطة جوجل التفاعلية الفعليه المحدثة لموقع طريق الملك سلمان بالرياض -->
+            <!-- خريطة جوجل التفاعلية المحدثة المتوافقة مع اللوكيشن الجديد -->
             <div class="map-container">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.258169222533!2d46.6027582!3d24.8550212!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2ee30dbe13f595%3A0xe5e1b601662d55ee!2zMjTCsDUxJzE4LjEiTiA0NsKwMzYnMTAuMCJF!5e0!3m2!1sar!2ssa!4v1719700000000!5m2!1sar!2ssa" allowfullscreen="" loading="lazy"></iframe>
             </div>
