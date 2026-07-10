@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مشتل غدير | عالم من الجمال الطبيعي وتنسيق الحدائق</title>
+    <!-- خط Cairo المميز -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #1b4332; /* أخضر ملكي فخم مناسب للوجو */
+            --primary-light: #2d6a4f;
+            --accent: #52b788; /* أخضر مبهج للتفاصيل */
+            --text-main: #2d3748;
+            --text-muted: #718096;
+            --bg-gradient: linear-gradient(135deg, #f4f9f4 0%, #e8f5e9 100%);
+            --white: #ffffff;
+            --card-shadow: 0 10px 30px rgba(27, 67, 50, 0.06);
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
+
+        /* الهيدر الاحترافي */
+        header {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-img {
+            height: 55px; /* حجم متناسق للوجو في الهيدر */
+            width: auto;
+            object-fit: contain;
+        }
+        .logo-text {
+            font-size: 22px;
+            font-weight: 900;
+            color: var(--primary);
+        }
+        .logo-text span { color: var(--accent); }
+        
+        .contact-btn {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 10px 24px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(27, 67, 50, 0.2);
+            transition: var(--transition);
+        }
+        .contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(27, 67, 50, 0.3);
+        }
+
+        /* البانر الرئيسي (Hero) */
+        .hero {
+            margin-top: 75px;
+            background: linear-gradient(rgba(19, 42, 31, 0.7), rgba(27, 67, 50, 0.55)), 
+                        url('https://images.pexels.com/photos/1005058/pexels-photo-1005058.jpeg?auto=compress&cs=tinysrgb&w=1200') no-repeat center center/cover;
+            height: 65vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 20px;
+        }
+        .hero-content h1 {
+            font-size: 44px;
+            font-weight: 900;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        .hero-content p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            font-weight: 300;
+            opacity: 0.95;
+        }
+
+        /* التنسيق العام للأقسام */
+        .section {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 50px;
+        }
+        .section-title span {
+            display: block;
+            font-size: 14px;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        /* قسم الخدمات المستخلصة والمطورة */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        .service-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            padding: 35px 25px;
+            border-radius: 24px;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+            opacity: 0;
+            transition: var(--transition);
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            background: var(--white);
+            box-shadow: 0 15px 35px rgba(27, 67, 50, 0.12);
+        }
+        .service-card:hover::before {
+            opacity: 1;
+        }
+        .service-icon {
+            font-size: 42px;
+            margin-bottom: 20px;
+            background: #e8f5e9;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 18px;
+            color: var(--primary);
+        }
+        .service-card h4 {
+            font-size: 22px;
+            color: var(--primary);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        /* شبكة معرض الصور */
+        .plants-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+        }
+        .plant-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            transition: var(--transition);
+        }
+        .plant-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(27, 67, 50, 0.15);
+            background: var(--white);
+        }
+        .img-container {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+        .plant-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        .plant-card:hover .plant-img { transform: scale(1.1); }
+        .plant-info { padding: 25px; }
+        .plant-info h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+        .plant-info p {
+            color: var(--text-muted);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        /* قسم الدليل والنصائح */
+        .tips-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .tip-item {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .tip-number {
+            background: var(--bg-gradient);
+            color: var(--primary);
+            font-size: 24px;
+            font-weight: 900;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            border: 2px solid var(--accent);
+        }
+        .tip-content h5 {
+            font-size: 18px;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        .tip-content p { color: var(--text-muted); font-size: 14px; }
+
+        /* قسم التقييمات */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .review-card {
+            background: rgba(255, 255, 255, 0.6);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+        .stars { color: #ffb703; font-size: 18px; margin-bottom: 15px; }
+        .review-text { font-size: 15px; font-style: italic; margin-bottom: 15px; line-height: 1.6; }
+        .reviewer-name { font-weight: 700; color: var(--primary); font-size: 14px; }
+
+        /* قسم التواصل والموقع الفعلي */
+        .contact-section {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+            padding: 80px 0;
+        }
+        .contact-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(352px, 1fr));
+            gap: 50px;
+            align-items: center;
+        }
+        .contact-info h3 {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 25px;
+        }
+        .info-card {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 16px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.01);
+            border-right: 4px solid var(--accent);
+            font-size: 16px;
+        }
+        .info-card strong { color: var(--primary); display: inline-block; width: 110px; }
+        
+        .btn-group { display: flex; gap: 15px; margin-top: 30px; }
+        .btn-call, .btn-whatsapp {
+            flex: 1;
+            padding: 15px;
+            text-align: center;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: var(--transition);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-call { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%); }
+        .btn-whatsapp { background: linear-gradient(135deg, #25D366 0%, #1cbd55 100%); }
+        .btn-call:hover, .btn-whatsapp:hover { transform: translateY(-3px); opacity: 0.95; }
+
+        .map-container iframe {
+            width: 100%;
+            height: 350px;
+            border: 0;
+            border-radius: 24px;
+            box-shadow: var(--card-shadow);
+        }
+
+        /* الفوتر */
+        footer {
+            background: var(--primary);
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 25px;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 32px; }
+            .hero-content p { font-size: 16px; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .btn-group { flex-direction: column; }
+            .tip-item { flex-direction: column; text-align: center; }
+            .logo-text { font-size: 18px; }
+            .logo-img { height: 45px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الهيدر الاحترافي مدمج به اللوجو الجديد -->
+    <header>
+        <div class="nav-container">
+            <div class="logo-container">
+                <img src="logo.png" alt="شعار مشتل غدير" class="logo-img">
+                <div class="logo-text">مشتل <span>غدير</span></div>
+            </div>
+            <a href="#contact" class="contact-btn">تواصل معنا</a>
+        </div>
+    </header>
+
+    <!-- البانر الرئيسي الفخم -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>مشتل غدير للزهور وتنسيق الحدائق</h1>
+            <p>نحول حوشك أو استراحتك إلى جنة خضراء بأفضل الأسعار وأجود الأنواع! 🌴✨</p>
+            <a href="#contact" class="contact-btn" style="padding: 14px 35px; font-size: 18px;">اطلب أو استشرنا الآن</a>
+        </div>
+    </section>
+
+    <!-- قسم الخدمات المستخلص والمعدل بناءً على طلبك -->
+    <section class="section">
+        <h2 class="section-title"><span>احترافية وخبرة</span>خدماتنا المتميزة</h2>
+        <div class="services-grid">
+            <!-- خدمة 1 -->
+            <div class="service-card">
+                <div class="service-icon">🌳</div>
+                <h4>تنسيق الحدائق</h4>
+                <p>تصميم وتنسيق حدائق الفلل والاستراحات بأحدث الموديلات العصرية التي تناسب ذوقك وتمنحك الراحة الكاملة.</p>
+            </div>
+            <!-- خدمة 2 -->
+            <div class="service-card">
+                <div class="service-icon">💧</div>
+                <h4>شبكات وأنظمة الري</h4>
+                <p>تركيب وتمديد شبكات الري العادية والحديثة، تركيب التايمر وأنظمة الري الأوتوماتيكي الذكية، بالإضافة لأنظمة الرذاذ لتلطيف الأجواء.</p>
+            </div>
+            <!-- خدمة 3 -->
+            <div class="service-card">
+                <div class="service-icon">🌿</div>
+                <h4>زراعة الثيل</h4>
+                <p>توريد وتركيب الثيل الطبيعي والصناعي بجميع أنواعه وفئاته، وبأعلى جودة تضمن استدامته ونضارته.</p>
+            </div>
+            <!-- خدمة 4 -->
+            <div class="service-card">
+                <div class="service-icon">🧱</div>
+                <h4>الأحواض الزراعية</h4>
+                <p>تصميم وبناء أحواض الزهور والأشجار بطرق فنية ومبتكرة تتماشى مع الديكور العام للمكان وتبرز جمال المزروعات.</p>
+            </div>
+            <!-- خدمة 5 -->
+            <div class="service-card">
+                <div class="service-icon">🌴</div>
+                <h4>توريد الشتلات والنخيل</h4>
+                <p>نوفر لك أجود أنواع الأشجار، زهور الزينة، والنخيل الفاخر (عربي وواشنطني) لنوفر لك كل ما تحتاجه في مكان واحد.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- معرض صور النباتات -->
+    <section class="section">
+        <h2 class="section-title"><span>من مشتلنا</span>إنتاجنا وجودة نباتاتنا</h2>
+        <div class="plants-grid">
+            <div class="plant-card">
+                <div class="img-container">
+                    <img src="https://images.pexels.com/photos/970089/pexels-photo-970089.jpeg?auto=compress&cs=tinysrgb&w=500" alt="ورود طبيعية" class="plant-img">
+                </div>
+                <div class="plant-info">
+                    <h3>زهور زينة طبيعية</h3>
+                    <p>تشكيلة فريدة ومبهجة من الزهور الموسمية والدائمة بألوان ساحرة تعيد الحياة لبلكونتك وحديقتك.</p>
+                </div>
+            </div>
+            <div class="plant-card">
+                <div class="img-container">
+                    <img src="https://images.pexels.com/photos/3153522/pexels-photo-3153522.jpeg?auto=compress&cs=tinysrgb&w=500" alt="نباتات داخلية" class="plant-img">
+                </div>
+                <div class="plant-info">
+                    <h3>نباتات ظل داخلية</h3>
+                    <p>أجود أنواع نباتات الزينة المخصصة للمنازل والمكاتب، تنقي الهواء وتضفي لمسة فخامة هادئة.</p>
+                </div>
+            </div>
+            <div class="plant-card">
+                <div class="img-container">
+                    <img src="https://images.pexels.com/photos/1407305/pexels-photo-1407305.jpeg?auto=compress&cs=tinysrgb&w=500" alt="أشجار حدائق" class="plant-img">
+                </div>
+                <div class="plant-info">
+                    <h3>أشجار وظل خارجي</h3>
+                    <p>أشجار زينة وشجيرات ظل قوية وممتازة للمساحات الخارجية والحدائق، منتقاة لتتحمل الأجواء والظروف المختلفة.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم النصائح والإرشادات السريعة -->
+    <section class="section">
+        <h2 class="section-title"><span>دليل العناية الأخضر</span>نصائح سريعة لنباتات تدوم طويلاً</h2>
+        <div class="tips-container">
+            <div class="tip-item">
+                <div class="tip-number">١</div>
+                <div class="tip-content">
+                    <h5>تنظيم الري حسب التربة</h5>
+                    <p>تجنب الري الزائد؛ دائماً افحص جفاف أول ٢ سم من التربة بإصبعك قبل إضافة ماء جديد للنباتات الداخلية.</p>
+                </div>
+            </div>
+            <div class="tip-item">
+                <div class="tip-number">٢</div>
+                <div class="tip-content">
+                    <h5>الإضاءة الطبيعية المناسبة</h5>
+                    <p>حتى نباتات الظل تحتاج إلى ضوء غير مباشر؛ ضعها بجانب النوافذ أو في غرف جيدة الإضاءة لضمان نموها السليم.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم التقييمات وآراء العملاء -->
+    <section class="section">
+        <h2 class="section-title"><span>قالوا عن مشتل غدير</span>ثقة عملائنا هي رأس مالنا</h2>
+        <div class="testimonials-grid">
+            <div class="review-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="review-text">"ما شاء الله، تعامل راقٍ جداً ونباتات في غاية النظافة والصحة. أخذت منهم أشجار ظل للحديقة وشبكة ري أوتوماتيك ممتازة."</p>
+                <div class="reviewer-name">- أبو فهد</div>
+            </div>
+            <div class="review-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="review-text">"شغلهم في تنسيق حدائق الاستراحات وتمديد شبكات الرذاذ ممتاز جداً، أسعارهم مناسبة وملتزمين بالمواعيد."</p>
+                <div class="reviewer-name">- أ. خالد الشمري</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم البيانات الفعلية والتواصل مدمج به الخريطة بدقة -->
+    <section class="contact-section" id="contact">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>تشرفنا زيارتكم في أي وقت</h3>
+                
+                <div class="info-card">
+                    <strong>📍 الموقع الحالي:</strong> المملكة العربية السعودية، الدمام
+                </div>
+                <div class="info-card">
+                    <strong>⏰ مواعيد العمل:</strong> يومياً من 6:00 صباحاً حتى 11:00 مساءً
+                </div>
+                <div class="info-card">
+                    <strong>📞 رقم التواصل:</strong> 0568583085
+                </div>
+                
+                <div class="btn-group">
+                    <a href="tel:+966568583085" class="btn-call">📞 اتصال هاتفي مباشر</a>
+                    <a href="https://wa.me/966568583085" target="_blank" class="btn-whatsapp">💬 مراسلة عبر الواتساب</a>
+                </div>
+            </div>
+            
+            <!-- خريطة جوجل التفاعلية الفعليه للمشتل برابطها المباشر المدمج -->
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3574.6041132644265!2d50.125139!3d26.371667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e49e9cf2996d595%3A0xe5e1b601662d55ee!2zMjbCsDIyJzE4LjAiTiA1MMKwMDcnMzAuNSJF!5e0!3m2!1sar!2ssa!4v1719700000000!5m2!1sar!2ssa" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer>
+        <p>جميع الحقوق محفوظة © مشتل غدير 2026</p>
+    </footer>
+
+</body>
+</html>
